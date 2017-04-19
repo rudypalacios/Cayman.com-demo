@@ -1,0 +1,28 @@
+.slider{
+	padding-bottom: 16.4%;
+	margin-bottom:1em;
+}
+.slider__content {
+    position:relative;
+}
+.slider__img {
+    position:absolute;
+    left:50%;
+    @include transform(translate(-50%, 0));
+}
+.slider__progress-bar {
+    width: 0;
+    height: 1em;
+    background-color: rgba(255,255,255,0.5);
+    position: absolute;
+    z-index: 1;
+	@include animation(progress-bar $visibility-time ease-out infinite);
+}
+
+//Slider images configuration
+@for $i from $slides through 1{
+	.slider__content img:nth-child(#{$i}) {
+		$delay: $slideshow-duration - ($i*$visibility-time);
+		@include animation(slider $slideshow-duration $delay infinite);
+	}
+}

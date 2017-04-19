@@ -1,0 +1,105 @@
+/* -- GRID SYSTEM -- */
+/* -- Container -- */
+.container{
+  font-size: 1.4rem;
+  margin: 0 auto;
+  &-fluid{
+    width:100%;
+  }
+  &--fixed{
+    position: fixed;
+    top: 0;
+  }
+  &--top14{
+    margin-top:14.61em;
+  }
+}
+
+.row{
+  width: 100%;
+  clear: both;
+}
+
+/* -- Large -- */
+//@media all and (min-width: 1200px) {
+    .container{
+      width: 117rem;
+    }
+    /* LG */
+    @for $i from 1 through $grid-columns {
+      $number: 100% / ($grid-columns / $i );
+      .col-#{$i} {
+        width: $number;
+        float: left;
+      }
+      .col-space-#{$i} {
+        margin-left: $number;
+      }
+    }
+//}
+
+/* -- Medium -- */
+@media all and (min-width: 992px) and (max-width: 1200px) {
+    .container{
+      width: 99.2rem;
+    }
+    /* MD */
+    @for $i from 1 through $grid-columns {
+      $number: 100% / ($grid-columns / $i );
+      .col-md-#{$i} {
+        width: $number;
+        float: left;
+      }
+      .col-space-md-#{$i} {
+        margin-left: $number;
+      }
+    }
+}
+
+/* -- Small -- */
+@media all and (min-width: 768px) and (max-width: 992px) {
+    .container{
+      width: 99.5%;
+    }
+    .col-sm-hide{
+      display: none;
+    }
+    .col-sm-show{
+      display: block;
+    }
+    /* SM */
+    @for $i from 1 through $grid-columns {
+      $number: 100% / ($grid-columns / $i );
+      .col-sm-#{$i} {
+        width: $number;
+        float: left;
+      }
+      .col-space-sm-#{$i} {
+        margin-left: $number;
+      }
+    }
+}
+
+/* -- Extra Small -- */
+@media all and (max-width: 768px) {
+    .container{
+      width: 100%;
+    }
+    .col-xs-hide{
+      display: none;
+    }
+    .col-xs-show{
+      display: block;
+    }
+    /* XS */
+    @for $i from 1 through $grid-columns {
+      $number: 100% / ($grid-columns / $i );
+      .col-xs-#{$i} {
+        width: $number;
+        float: left;
+      }
+      .col-space-xs-#{$i} {
+        margin-left: $number;
+      }
+    }
+}

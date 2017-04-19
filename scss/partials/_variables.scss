@@ -1,0 +1,44 @@
+//COLOR PALETTE
+//Font main color / gray
+	$color_font: #444;
+//Secondary font color / white
+	$color_font_second: #fff;
+//Third font color / dark blue
+	$color_font_third: #04649d;
+//Menu and li-bg
+	$color_menu: #296098;
+//Main Titles
+	$color_title: #00add2;
+//Subtitles
+	$color_subtitle: #1e73be;
+//Module Title
+	$color_module_title: #4c4c4c;
+//Links
+	$color_link:#0165bd;
+//Background colors
+	$bg_aqua:#6fa6c6;
+	$bg_light_blue:#36b6fa;
+	$bg_dark_blue:#04649d;
+	$bg_darker_blue:#296098;
+//Misc colors
+	$light_gray:#dedede;
+	$dark_gray:#777;
+
+//SLIDER
+	$slides: 3;
+	$visibility-time: 8s;
+	$end-of-visibility:round(100/$slides);
+	$slideshow-duration: $slides*$visibility-time;
+
+//GRID SYSTEM
+//Max columns
+	$grid-columns: 12;
+//Headings default font-size:margin
+	$headings: (
+				3.2rem  :0.67em 0, //2em 	- H1
+                2.4rem  :0.83em 0, //1.5em	- H2
+                1.8rem  :1em 0,    //1.17em	- H3
+                1.6rem  :1.33em 0, //1em	- H4
+                1.3rem  :1.67em 0, //0.83em	- H5
+                1.2rem  :2.33em 0  //0.75em	- H6
+                );

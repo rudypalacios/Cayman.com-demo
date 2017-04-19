@@ -1,0 +1,24 @@
+.text{
+	&-left{
+		text-align: left;
+	}
+	&-right{
+		text-align: right;
+	}
+	&-center{
+		text-align: center;
+	}
+}
+
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
+.pull-right{
+	float:right;
+}
+.display-table{
+	display: table;
+}

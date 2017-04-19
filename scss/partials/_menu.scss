@@ -1,0 +1,118 @@
+.main-menu{
+	line-height: 1em;
+	&__item{
+		float: left;
+		color: $color_menu;
+		text-transform: uppercase;
+		&:hover .main-menu__submenu {
+		  display: block;
+		  max-height: 20em;
+		}
+	}
+	&__link{
+		color: $color_menu;
+		padding:1em 1.2em;
+		display: block;
+		height: 4em;
+		@include border-radius(0 0 0.4em 0.4em);
+		@include transition(color 0.5s, background 0.5s);
+
+		&:hover, &--active{
+			color: $color_font_second;
+			background:$bg_darker_blue;
+		}
+	}
+
+	&__submenu{
+		position: absolute;
+		overflow: hidden;
+		max-height: 0;
+		background: $light_gray;
+		z-index: 2;
+		@include transition(all 0.5s ease-out);
+
+		&-link{
+			color: $color_menu;
+			padding:0.75em 2em;
+			display: block;
+			
+			@include transition(color 0.5s, background 0.5s);
+
+			&:hover, &--active{
+				color: $color_font_second;
+				background:$bg_darker_blue;
+			}
+		}
+	}
+}
+
+.right-menu{
+	&__item{
+		color: $color_font_third;
+		text-transform: uppercase;
+		padding: 0.5em;
+		display: block;
+		font-size: 1.3rem;
+		border-bottom:1px solid $light_gray;
+		@include border-radius(0.25em);
+		@include transition(color 0.5s, background 0.5s);
+		&:hover,&--active{
+			color: $color_font_second;
+			background:$bg_darker_blue;
+		}
+	}
+}
+
+.footer__menu{
+	background-color: $bg_aqua;
+	font-size: 1.6rem;
+
+	&_list{
+		@media all and (max-width: 1200px){
+			width: 80%;
+			margin: auto;
+		}
+	}
+	&_item{
+		float: left;
+		color: $color_font_second;
+		padding: 0 0.5em;
+	}
+	&_link{
+		color: $color_font_second;
+	}
+}
+
+.toggle-menu{
+	padding-top: 9.7%;
+	left:0;
+	width: 100%;
+	position: absolute;
+	overflow: hidden;
+	max-height: 0;
+	@include transition(all 1s ease-in-out);
+	z-index: 5;
+	&__list{
+		background: #FFF;
+		position: relative;
+	}
+	&__link,&__sublink{
+		color: $color_menu;
+		padding:0.5em;
+		display: block;
+		border-bottom:1px solid $light_gray;
+		@include transition(color 0.5s, background 0.5s);
+		&:hover,&--active{
+			color: $color_font_second;
+			background: $bg_darker_blue;
+		}
+	}
+	&__submenu{
+		width: 100%;
+		display: table;
+		background: $light_gray;
+	}
+	&__subitem{
+		float: left;
+	}
+}

@@ -1,0 +1,35 @@
+.button{
+	padding: 0.75em 1em;
+	border: 0;
+	cursor: pointer;
+	@include transition(background 0.5s);
+	&--light-blue{
+		background: $bg_light_blue;
+		color: $color_font_second;
+		&:hover{
+			background: $bg_dark_blue;
+		}
+	}
+}
+
+.toggle__button:focus ~ .toggle-menu {
+  display: block;
+  max-height: 100em;
+}
+.toggle__button{
+	border: 1px solid #CCC;
+	padding: 0.5em;
+	cursor: pointer;
+	margin-top:30%;
+	@include border-radius(0.2em);
+	z-index: 60;
+	position: relative;
+}
+.toggle__bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #000;
+    margin: 2px 0;
+}

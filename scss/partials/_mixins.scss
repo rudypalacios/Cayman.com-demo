@@ -1,0 +1,29 @@
+@mixin box-shadow($values...) {
+  -webkit-box-shadow: $values;
+     -moz-box-shadow: $values;
+          box-shadow: $values;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin transition($transition...){
+	-webkit-transition: $transition;
+	   -moz-transition: $transition;
+	   	 -o-transition: $transition;
+	   		  transition: $transition;
+}
+@mixin animation($props...){
+	-webkit-animation: $props;
+	   -moz-animation: $props;
+	   	 -o-animation: $props;
+	   		  animation: $props;
+}
+@mixin transform($value) {
+  -webkit-transform: $value;
+  	 -moz-transform: $value;
+  	  -ms-transform: $value;
+  	   -o-transform: $value;
+  		    transform: $value;
+}
