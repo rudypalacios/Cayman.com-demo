@@ -1,28 +1,76 @@
 .slider{
 	padding-bottom: 16.4%;
 	margin-bottom:1em;
-}
-.slider__content {
-    position:relative;
-}
-.slider__img {
-    position:absolute;
-    left:50%;
-    @include transform(translate(-50%, 0));
-}
-.slider__progress-bar {
-    width: 0;
-    height: 1em;
-    background-color: rgba(255,255,255,0.5);
-    position: absolute;
-    z-index: 1;
-	@include animation(progress-bar $visibility-time ease-out infinite);
+    text-transform: uppercase;
+
+    &__body {
+        position:relative;
+    }
+
+    &__img {
+        position:absolute;
+        left:50%;
+        @include transform(translate(-50%, 0));
+    }
+
+    &__title {
+        font-size: 3.5rem;
+        padding: 0.25em;
+        background: #FFF;
+        position: relative;
+        opacity: 0;
+    }
+    &__content{
+        position: absolute;
+        width: 90em;
+        padding-top: 3em;
+        left:50%;
+        @include transform(translate(-50%, 0));
+        //border: 1px solid;
+    }
+    &__text {
+        font-size: 1.75rem;
+        padding: 0.5em;
+        background: #DB4360;
+        color: #FFF;
+        opacity: 0;
+    }
+
+    &__progress-bar {
+        width: 0;
+        height: 1em;
+        background-color: rgba(255,255,255,0.5);
+        position: absolute;
+        z-index: 1;
+        @include animation(progress-bar $visibility-time ease-out infinite);
+    }
 }
 
 //Slider images configuration
 @for $i from $slides through 1{
-	.slider__content img:nth-child(#{$i}) {
+	.slider__body > div:nth-child(#{$i}) {
 		$delay: $slideshow-duration - ($i*$visibility-time);
 		@include animation(slider $slideshow-duration $delay infinite);
 	}
+}
+
+@for $i from 1 through 7{
+    .slider__text-#{$i} {
+        $delay: $slideshow-duration - ($i*$visibility-time);
+        @include animation(slider-text $slideshow-duration #{$i}s infinite);
+    }
+}
+
+@for $i from 8 through 14{
+    .slider__text-#{$i} {
+        $delay: $slideshow-duration - ($i*$visibility-time);
+        @include animation(slider-text $slideshow-duration #{($i+1)}s infinite);
+    }
+}
+
+@for $i from 15 through 21{
+    .slider__text-#{$i} {
+        $delay: $slideshow-duration - ($i*$visibility-time);
+        @include animation(slider-text $slideshow-duration #{($i+2)}s infinite);
+    }
 }
