@@ -1,6 +1,7 @@
 /* -- GRID SYSTEM -- */
 /* -- Container -- */
 .container{
+  width: 117rem;
   font-size: 1.4rem;
   margin: 0 auto;
   &-fluid{
@@ -20,12 +21,7 @@
   clear: both;
 }
 
-/* -- Large -- */
-//@media all and (min-width: 1200px) {
-    .container{
-      width: 117rem;
-    }
-    /* LG */
+/* -- Large (1200px) -- */
     @for $i from 1 through $grid-columns {
       $number: 100% / ($grid-columns / $i );
       .col-#{$i} {
@@ -36,7 +32,6 @@
         margin-left: $number;
       }
     }
-//}
 
 /* -- Medium -- */
 @media all and (min-width: 992px) and (max-width: 1200px) {

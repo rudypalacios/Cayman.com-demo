@@ -46,15 +46,15 @@
     }
 }
 
-  .four{height: 3.5em; 
+  .slider__text--spacer{height: 1.82vw;
      margin-bottom: 0.5em; 
      margin-top: 0.5em; }
 
 //Slider images configuration
 @for $i from 1 through $slides{
 	.slider__body > div:nth-child(#{$i}) {
-		$delay: $slideshow-duration - ($i*$visibility-time);
-		@include animation(slider $slideshow-duration $delay infinite);
+	   $delay: $slideshow-duration - ($i*$visibility-time);
+	   @include animation(slider $slideshow-duration $delay infinite);
 	}
 
     $end: $words-per-slide*$i;
@@ -63,6 +63,45 @@
         .slider__text-#{$x} {
             $delay: #{$x+($i - 1)}s;
             @include animation(slider-text $slideshow-duration $delay infinite);
+        }
+    }
+}
+
+@include breakpoint("(min-width: 992px) and (max-width: 1200px)") {
+    .slider{
+        &__content{
+          width: 99.2rem;
+        }
+        &__title{
+            font-size: 2.5vw;
+        }
+        &__text{
+            font-size: 1.2vw;
+        }
+        &__content {
+            padding-top: 1vw;
+        }
+    }
+}
+
+@include breakpoint("(max-width: 992px)") {
+    .slider{
+        &__content{
+          width: 95%;
+        }
+        &__title{
+            font-size: 2.5vw;
+        }
+        &__text{
+            font-size: 1.2vw;
+        }
+        &__content {
+            padding-top: 1vw;
+        }
+        &__text--spacer{
+            height: 2.5vw;
+            margin-bottom: 0;
+            margin-top: 0;
         }
     }
 }
