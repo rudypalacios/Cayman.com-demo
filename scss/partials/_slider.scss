@@ -22,11 +22,11 @@
     }
     &__content{
         position: absolute;
-        width: 90em;
+        width: 117em;
         padding-top: 3em;
         left:50%;
         @include transform(translate(-50%, 0));
-        //border: 1px solid;
+        border: 1px solid;
     }
     &__text {
         font-size: 1.75rem;
@@ -46,31 +46,23 @@
     }
 }
 
+  .four{height: 3.5em; 
+     margin-bottom: 0.5em; 
+     margin-top: 0.5em; }
+
 //Slider images configuration
-@for $i from $slides through 1{
+@for $i from 1 through $slides{
 	.slider__body > div:nth-child(#{$i}) {
 		$delay: $slideshow-duration - ($i*$visibility-time);
 		@include animation(slider $slideshow-duration $delay infinite);
 	}
-}
 
-@for $i from 1 through 7{
-    .slider__text-#{$i} {
-        $delay: $slideshow-duration - ($i*$visibility-time);
-        @include animation(slider-text $slideshow-duration #{$i}s infinite);
-    }
-}
-
-@for $i from 8 through 14{
-    .slider__text-#{$i} {
-        $delay: $slideshow-duration - ($i*$visibility-time);
-        @include animation(slider-text $slideshow-duration #{($i+1)}s infinite);
-    }
-}
-
-@for $i from 15 through 21{
-    .slider__text-#{$i} {
-        $delay: $slideshow-duration - ($i*$visibility-time);
-        @include animation(slider-text $slideshow-duration #{($i+2)}s infinite);
+    $end: $words-per-slide*$i;
+    $start: ($end - $words-per-slide)+1;
+    @for $x from $start through $end{
+        .slider__text-#{$x} {
+            $delay: #{$x+($i - 1)}s;
+            @include animation(slider-text $slideshow-duration $delay infinite);
+        }
     }
 }

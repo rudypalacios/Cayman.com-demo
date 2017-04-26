@@ -26,6 +26,7 @@
 
 //SLIDER
 	$slides: 3;
+	$words-per-slide:7;
 	$visibility-time: 8s;
 	$end-of-visibility:round(100/$slides);
 	$slideshow-duration: $slides*$visibility-time;

@@ -719,14 +719,15 @@ h6 {
     opacity: 0; }
   .slider__content {
     position: absolute;
-    width: 90em;
+    width: 117em;
     padding-top: 3em;
     left: 50%;
     -webkit-transform: translate(-50%, 0);
     -moz-transform: translate(-50%, 0);
     -ms-transform: translate(-50%, 0);
     -o-transform: translate(-50%, 0);
-    transform: translate(-50%, 0); }
+    transform: translate(-50%, 0);
+    border: 1px solid; }
   .slider__text {
     font-size: 1.75rem;
     padding: 0.5em;
@@ -744,17 +745,10 @@ h6 {
     -o-animation: progress-bar 8s ease-out infinite;
     animation: progress-bar 8s ease-out infinite; }
 
-.slider__body > div:nth-child(3) {
-  -webkit-animation: slider 24s 0s infinite;
-  -moz-animation: slider 24s 0s infinite;
-  -o-animation: slider 24s 0s infinite;
-  animation: slider 24s 0s infinite; }
-
-.slider__body > div:nth-child(2) {
-  -webkit-animation: slider 24s 8s infinite;
-  -moz-animation: slider 24s 8s infinite;
-  -o-animation: slider 24s 8s infinite;
-  animation: slider 24s 8s infinite; }
+.four {
+  height: 3.5em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em; }
 
 .slider__body > div:nth-child(1) {
   -webkit-animation: slider 24s 16s infinite;
@@ -804,6 +798,12 @@ h6 {
   -o-animation: slider-text 24s 7s infinite;
   animation: slider-text 24s 7s infinite; }
 
+.slider__body > div:nth-child(2) {
+  -webkit-animation: slider 24s 8s infinite;
+  -moz-animation: slider 24s 8s infinite;
+  -o-animation: slider 24s 8s infinite;
+  animation: slider 24s 8s infinite; }
+
 .slider__text-8 {
   -webkit-animation: slider-text 24s 9s infinite;
   -moz-animation: slider-text 24s 9s infinite;
@@ -845,6 +845,12 @@ h6 {
   -moz-animation: slider-text 24s 15s infinite;
   -o-animation: slider-text 24s 15s infinite;
   animation: slider-text 24s 15s infinite; }
+
+.slider__body > div:nth-child(3) {
+  -webkit-animation: slider 24s 0s infinite;
+  -moz-animation: slider 24s 0s infinite;
+  -o-animation: slider 24s 0s infinite;
+  animation: slider 24s 0s infinite; }
 
 .slider__text-15 {
   -webkit-animation: slider-text 24s 17s infinite;
