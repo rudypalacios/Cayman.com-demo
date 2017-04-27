@@ -1,6 +1,6 @@
 //Grid
-@mixin breakpoint($how,$where:all) {
-  @media #{$where} and #{$how} {
+@mixin breakpoint($display,$where:all) {
+  @media #{$where} and #{$display} {
     @content;
   }
 }
@@ -33,4 +33,19 @@
       -ms-transform: $value;
        -o-transform: $value;
           transform: $value;
+}
+//Animation
+@mixin keyframes($name){
+  @-webkit-keyframes #{$name}{
+    @content;
+  }
+  @-moz-keyframes #{$name}{
+    @content;
+  }
+  @-o-keyframes #{$name}{
+    @content;
+  }
+  @keyframes #{$name}{
+    @content;
+  }
 }

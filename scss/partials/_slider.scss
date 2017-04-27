@@ -26,7 +26,6 @@
         padding-top: 3em;
         left:50%;
         @include transform(translate(-50%, 0));
-        border: 1px solid;
     }
     &__text {
         font-size: 1.75rem;
@@ -44,19 +43,22 @@
         z-index: 1;
         @include animation(progress-bar $visibility-time ease-out infinite);
     }
-}
 
-  .slider__text--spacer{height: 1.82vw;
-     margin-bottom: 0.5em; 
-     margin-top: 0.5em; }
+    &__text--spacer{
+        height: 1.82vw;
+        margin-bottom: 0.5em; 
+        margin-top: 0.5em;
+    }
+}
 
 //Slider images configuration
 @for $i from 1 through $slides{
-	.slider__body > div:nth-child(#{$i}) {
+    //Slide fade-in and fade-out
+	.slider__slide-#{$i} {
 	   $delay: $slideshow-duration - ($i*$visibility-time);
 	   @include animation(slider $slideshow-duration $delay infinite);
 	}
-
+    //Text inside slide, fade-in and fade-out
     $end: $words-per-slide*$i;
     $start: ($end - $words-per-slide)+1;
     @for $x from $start through $end{
@@ -67,7 +69,7 @@
     }
 }
 
-@include breakpoint("(min-width: 992px) and (max-width: 1200px)") {
+@include breakpoint("(max-width: 1200px)") {
     .slider{
         &__content{
           width: 99.2rem;
@@ -88,15 +90,6 @@
     .slider{
         &__content{
           width: 95%;
-        }
-        &__title{
-            font-size: 2.5vw;
-        }
-        &__text{
-            font-size: 1.2vw;
-        }
-        &__content {
-            padding-top: 1vw;
         }
         &__text--spacer{
             height: 2.5vw;

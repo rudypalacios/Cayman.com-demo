@@ -4,6 +4,7 @@
   width: 117rem;
   font-size: 1.4rem;
   margin: 0 auto;
+
   &-fluid{
     width:100%;
   }
@@ -34,7 +35,7 @@
     }
 
 /* -- Medium -- */
-@media all and (min-width: 992px) and (max-width: 1200px) {
+@include breakpoint("(min-width: 992px) and (max-width: 1200px)"){
     .container{
       width: 99.2rem;
     }
@@ -52,7 +53,7 @@
 }
 
 /* -- Small -- */
-@media all and (min-width: 768px) and (max-width: 992px) {
+@include breakpoint("(min-width: 768px) and (max-width: 992px)"){
     .container{
       width: 99.5%;
     }
@@ -76,7 +77,7 @@
 }
 
 /* -- Extra Small -- */
-@media all and (max-width: 768px) {
+@include breakpoint("(max-width: 768px)"){
     .container{
       width: 100%;
     }

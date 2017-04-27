@@ -86,6 +86,106 @@ h5 {
 h6 {
   font-size: 1.2rem; }
 
+@-webkit-keyframes progress-bar {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+@-moz-keyframes progress-bar {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+@-o-keyframes progress-bar {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+@keyframes progress-bar {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+@-webkit-keyframes slider {
+  0% {
+    opacity: 1; }
+  33% {
+    opacity: 1; }
+  37% {
+    opacity: 0; }
+  96% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes slider {
+  0% {
+    opacity: 1; }
+  33% {
+    opacity: 1; }
+  37% {
+    opacity: 0; }
+  96% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-o-keyframes slider {
+  0% {
+    opacity: 1; }
+  33% {
+    opacity: 1; }
+  37% {
+    opacity: 0; }
+  96% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes slider {
+  0% {
+    opacity: 1; }
+  33% {
+    opacity: 1; }
+  37% {
+    opacity: 0; }
+  96% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes slider-text {
+  0% {
+    opacity: 0; }
+  2% {
+    opacity: 1; }
+  33% {
+    opacity: 1; }
+  35% {
+    opacity: 0; } }
+@-moz-keyframes slider-text {
+  0% {
+    opacity: 0; }
+  2% {
+    opacity: 1; }
+  33% {
+    opacity: 1; }
+  35% {
+    opacity: 0; } }
+@-o-keyframes slider-text {
+  0% {
+    opacity: 0; }
+  2% {
+    opacity: 1; }
+  33% {
+    opacity: 1; }
+  35% {
+    opacity: 0; } }
+@keyframes slider-text {
+  0% {
+    opacity: 0; }
+  2% {
+    opacity: 1; }
+  33% {
+    opacity: 1; }
+  35% {
+    opacity: 0; } }
 .text-left {
   text-align: left; }
 .text-right {
@@ -487,31 +587,6 @@ h6 {
 
   .col-space-xs-12 {
     margin-left: 100%; } }
-@keyframes progress-bar {
-  from {
-    width: 0; }
-  to {
-    width: 100%; } }
-@keyframes slider {
-  0% {
-    opacity: 1; }
-  33% {
-    opacity: 1; }
-  37% {
-    opacity: 0; }
-  96% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-@keyframes slider-text {
-  0% {
-    opacity: 0; }
-  2% {
-    opacity: 1; }
-  33% {
-    opacity: 1; }
-  35% {
-    opacity: 0; } }
 .img-responsive {
   display: block;
   max-width: 100%;
@@ -723,8 +798,7 @@ h6 {
     -moz-transform: translate(-50%, 0);
     -ms-transform: translate(-50%, 0);
     -o-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-    border: 1px solid; }
+    transform: translate(-50%, 0); }
   .slider__text {
     font-size: 1.75rem;
     padding: 0.5em;
@@ -741,13 +815,12 @@ h6 {
     -moz-animation: progress-bar 8s ease-out infinite;
     -o-animation: progress-bar 8s ease-out infinite;
     animation: progress-bar 8s ease-out infinite; }
+  .slider__text--spacer {
+    height: 1.82vw;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em; }
 
-.slider__text--spacer {
-  height: 1.82vw;
-  margin-bottom: 0.5em;
-  margin-top: 0.5em; }
-
-.slider__body > div:nth-child(1) {
+.slider__slide-1 {
   -webkit-animation: slider 24s 16s infinite;
   -moz-animation: slider 24s 16s infinite;
   -o-animation: slider 24s 16s infinite;
@@ -795,7 +868,7 @@ h6 {
   -o-animation: slider-text 24s 7s infinite;
   animation: slider-text 24s 7s infinite; }
 
-.slider__body > div:nth-child(2) {
+.slider__slide-2 {
   -webkit-animation: slider 24s 8s infinite;
   -moz-animation: slider 24s 8s infinite;
   -o-animation: slider 24s 8s infinite;
@@ -843,7 +916,7 @@ h6 {
   -o-animation: slider-text 24s 15s infinite;
   animation: slider-text 24s 15s infinite; }
 
-.slider__body > div:nth-child(3) {
+.slider__slide-3 {
   -webkit-animation: slider 24s 0s infinite;
   -moz-animation: slider 24s 0s infinite;
   -o-animation: slider 24s 0s infinite;
@@ -891,7 +964,7 @@ h6 {
   -o-animation: slider-text 24s 23s infinite;
   animation: slider-text 24s 23s infinite; }
 
-@media all and (min-width: 992px) and (max-width: 1200px) {
+@media all and (max-width: 1200px) {
   .slider__content {
     width: 99.2rem; }
   .slider__title {
@@ -903,12 +976,6 @@ h6 {
 @media all and (max-width: 992px) {
   .slider__content {
     width: 95%; }
-  .slider__title {
-    font-size: 2.5vw; }
-  .slider__text {
-    font-size: 1.2vw; }
-  .slider__content {
-    padding-top: 1vw; }
   .slider__text--spacer {
     height: 2.5vw;
     margin-bottom: 0;

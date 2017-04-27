@@ -1,13 +1,13 @@
 //SLIDER
 //Progress Bar
-@keyframes progress-bar {
-	from{width: 0;}
-	to{width:100%;}
+@include keyframes('progress-bar'){
+    from{width: 0;}
+    to{width:100%;}    
 }
 
 //Slider Fade-in/Fade-out
-@keyframes slider {
-	//Animation starts
+@include keyframes('slider'){
+    //Animation starts
     0% {
         opacity: 1;
     }
@@ -25,10 +25,11 @@
     }
     100% {
         opacity:1;
-    }
+    }    
 }
 
-@keyframes slider-text {
+//Slider Fade-in/Fade-out
+@include keyframes('slider-text'){
     //Animation starts
     0% {
         opacity: 0;
