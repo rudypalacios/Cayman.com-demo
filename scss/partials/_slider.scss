@@ -1,6 +1,6 @@
 .slider{
-	padding-bottom: 16.4%;
-	margin-bottom:1em;
+    padding-bottom: 16.4%;
+    margin-bottom:1em;
     text-transform: uppercase;
 
     &__body {
@@ -41,7 +41,7 @@
         background-color: rgba(255,255,255,0.5);
         position: absolute;
         z-index: 1;
-        @include animation(progress-bar $visibility-time ease-out infinite);
+        @include animation(progress-bar $time-per-slide ease-out infinite);
     }
 
     &__text--spacer{
@@ -54,27 +54,41 @@
 //Slider images configuration
 @for $i from 1 through $slides{
     //Slide fade-in and fade-out
-	.slider__slide-#{$i} {
-	   $delay: $slideshow-duration - ($i*$visibility-time);
-	   @include animation(slider $slideshow-duration $delay infinite);
-	}
-    //Text inside slide, fade-in and fade-out
+    .slider__slide-#{$i} {
+        //When to start the slide animation
+        $delay: $time-per-slide * ($i - 1);
+        @include animation(slider $slideshow-duration $delay infinite);
+    }    
+
+    //Manage text inside slide, animation
     $end: $words-per-slide*$i;
-    $start: ($end - $words-per-slide)+1;
+    $start: $end - ($words-per-slide - 1);
+    $counter: 1;
     @for $x from $start through $end{
         .slider__text-#{$x} {
-            $delay: #{$x+($i - 1)}s;
-            @include animation(slider-text $slideshow-duration $delay infinite);
+            $text-delay: $delay + ($secs-per-block * $counter);
+            @include animation(slider-text $slideshow-duration $text-delay infinite);
+            $counter: $counter + 1;
         }
     }
 }
 
 @include breakpoint("(max-width: 1200px)") {
-    .slider{
-        &__content{
+    .slider__content{
             width: 95%;
             font-size: 0.75vw;
             padding-top: 1vw;
+    }
+}
+
+@include breakpoint("(min-width: 2200px)") {
+    .slider{
+        padding-bottom:35.4rem;
+
+        &__text--spacer{
+            height: 6rem;
+            margin-bottom: 0;
+            margin-top: 0;
         }
     }
 }

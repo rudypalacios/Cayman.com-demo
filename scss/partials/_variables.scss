@@ -33,11 +33,17 @@
 	$gray:#ccc;
 
 //SLIDER
+	//Configuration
 	$slides: 3;
 	$words-per-slide:7;
-	$visibility-time: 8s;
-	$end-of-visibility:round(100/$slides);
-	$slideshow-duration: $slides*$visibility-time;
+	$time-per-slide: 8s;
+	//Math
+		$end-of-visibility:round(100/$slides); //Percent
+		$slideshow-duration: $slides*$time-per-slide; //Time in seconds
+		//Text
+    	$secs-per-block: $time-per-slide/($words-per-slide + 2);
+	//Init
+	$delay: 0;
 
 //GRID SYSTEM
 //Max columns
