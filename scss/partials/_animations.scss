@@ -1,48 +1,51 @@
 //SLIDER
-//Progress Bar
-@include keyframes('progress-bar'){
-    from{width: 0;}
-    to{width:100%;}    
-}
+    //Progress Bar
+    @include keyframes('progress-bar'){
+        from{width: 0;}
+        to{width:100%;}    
+    }
 
-//Slider Fade-in/Fade-out
-@include keyframes('slider'){
-    //Animation starts
-    0% {
-        opacity: 1;
+    //Slider Fade-in/Fade-out
+    @include keyframes('slider'){
+        //Animation starts
+        0% {
+            opacity: 1;
+        }
+        //Time it should start fade-out
+        #{$end-of-visibility}% {
+            opacity:1;
+        }
+        //Complete fade-out
+        #{$end-of-visibility+4}% {
+            opacity:0;
+        }
+        //Start fade-in to repeat cycle
+        96% {
+            opacity:0;
+        }
+        100% {
+            opacity:1;
+        }    
     }
-    //Time it should start fade-out
-    #{$end-of-visibility}% {
-        opacity:1;
-    }
-    //Complete fade-out
-    #{$end-of-visibility+4}% {
-        opacity:0;
-    }
-    //Start fade-in to repeat cycle
-    96% {
-        opacity:0;
-    }
-    100% {
-        opacity:1;
-    }    
-}
 
-//Slider Fade-in/Fade-out
-@include keyframes('slider-text'){
-    //Animation starts
-    0% {
-        opacity: 0;
+    //Slider Fade-in/Fade-out
+    @include keyframes('slider-text'){
+        //Animation starts
+        0% {
+            opacity: 0;
+        }
+        2% {
+            opacity: 1;
+        }
+        //Time it should start fade-out
+        #{$end-of-visibility}% {
+            opacity:1;
+        }
+        //Complete fade-out
+        #{$end-of-visibility+2}% {
+            opacity:0;
+        }
+        100% {
+            opacity:0;
+        }
     }
-    2% {
-        opacity: 1;
-    }
-    //Time it should start fade-out
-    #{$end-of-visibility}% {
-        opacity:1;
-    }
-    //Complete fade-out
-    #{$end-of-visibility+2}% {
-        opacity:0;
-    }
-}

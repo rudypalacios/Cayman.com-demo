@@ -6,45 +6,54 @@
 }
 //Effects
 @mixin box-shadow($values...) {
+  @if($use-vendor-prefixes){
   -webkit-box-shadow: $values;
      -moz-box-shadow: $values;
+  }
           box-shadow: $values;
 }
 @mixin border-radius($radius) {
+  @if($use-vendor-prefixes){
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
+  }
           border-radius: $radius;
 }
 @mixin transition($transition...){
+ @if($use-vendor-prefixes){
   -webkit-transition: $transition;
      -moz-transition: $transition;
        -o-transition: $transition;
+ }
           transition: $transition;
 }
 @mixin animation($props...){
+ @if($use-vendor-prefixes){
   -webkit-animation: $props;
      -moz-animation: $props;
        -o-animation: $props;
+ }
           animation: $props;
 }
 @mixin transform($value) {
+ @if($use-vendor-prefixes){
   -webkit-transform: $value;
      -moz-transform: $value;
       -ms-transform: $value;
        -o-transform: $value;
+ }
           transform: $value;
 }
 //Animation
 @mixin keyframes($name){
+ @if($use-vendor-prefixes){
   @-webkit-keyframes #{$name}{
     @content;
   }
   @-moz-keyframes #{$name}{
     @content;
   }
-  @-o-keyframes #{$name}{
-    @content;
-  }
+ }
   @keyframes #{$name}{
     @content;
   }

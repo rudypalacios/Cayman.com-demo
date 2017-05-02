@@ -1,28 +1,36 @@
+//Compatibility
+	$use-vendor-prefixes: false;
 //COLOR PALETTE
-//Font main color / gray
-	$color_font: #444;
+//Font main color / light black
+	$color-font: #444;
 //Secondary font color / white
-	$color_font_second: #fff;
+	$color-font-second: #fff;
 //Third font color / dark blue
-	$color_font_third: #04649d;
+	$color-font-third: #04649d;
 //Menu and li-bg
-	$color_menu: #296098;
+	$color-menu: #296098;
 //Main Titles
-	$color_title: #00add2;
+	$color-title: #00add2;
 //Subtitles
-	$color_subtitle: #1e73be;
+	$color-subtitle: #1e73be;
 //Module Title
-	$color_module_title: #4c4c4c;
+	$color-module-title: #4c4c4c;
 //Links
-	$color_link:#0165bd;
+	$color-link:#0165bd;
 //Background colors
-	$bg_aqua:#6fa6c6;
-	$bg_light_blue:#36b6fa;
-	$bg_dark_blue:#04649d;
-	$bg_darker_blue:#296098;
+	$bg-white:#fff;
+	$bg-black:#000;
+	$bg-red: #DB4360;
+	$bg-aqua:#6fa6c6;
+	$bg-light-blue:#36b6fa;
+	$bg-dark-blue:#04649d;
+	$bg-darker-blue:#296098;
 //Misc colors
-	$light_gray:#dedede;
-	$dark_gray:#777;
+	$cadet-blue: #b9e9f7;
+	$lighter-gray:#f5f5f5;
+	$light-gray:#dedede;
+	$dark-gray:#777;
+	$gray:#ccc;
 
 //SLIDER
 	$slides: 3;
@@ -35,6 +43,7 @@
 //Max columns
 	$grid-columns: 12;
 //Headings default font-size:margin
+	$use-header-margins: false;
 	$headings: (
 				3.2rem  :0.67em 0, //2em 	- H1
                 2.4rem  :0.83em 0, //1.5em	- H2

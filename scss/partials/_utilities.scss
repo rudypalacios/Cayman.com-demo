@@ -9,16 +9,22 @@
 		text-align: center;
 	}
 }
-
 .hide{
 	display: none;
 }
 .show{
 	display: block;
 }
+.pull-left{
+	float:left;
+}
 .pull-right{
 	float:right;
 }
 .display-table{
 	display: table;
+}
+.center-block{
+	left:50%;
+  	@include transform(translate(-50%, 0));
 }

@@ -46,19 +46,21 @@ table {
   border-spacing: 0;
 }
 html {
+  //Set REM reference
   font-size: 62.5%;
+  //Set default box model
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
       -ms-box-sizing: border-box;
           box-sizing: border-box;
 }
+//Make sure everything works with the same box model
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
      -moz-box-sizing: inherit;
       -ms-box-sizing: inherit;
           box-sizing: inherit;
   }
-/* Custom */
 :focus {
   outline: 0;
 }
@@ -67,15 +69,18 @@ a{
   text-decoration: none;
 }
 
-%header{
-    display: block;
-}
+//Set default HEADER sizes
+  %header{
+      display: block;
+  }
 
-@each $font-size,$margin in $headings{
-  $index: index(($headings), ($font-size $margin));
-  h#{$index} {
+  @each $font-size,$margin in $headings{
+    $index: index(($headings), ($font-size $margin));
+    h#{$index} {
       @extend %header;
       font-size: $font-size;
-      //margin: $margin;
-  }  
-}
+      @if($use-header-margins){
+        margin: $margin;  
+      }
+    }  
+  }

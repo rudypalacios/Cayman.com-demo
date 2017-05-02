@@ -1,16 +1,18 @@
 .main-menu{
 	line-height: 1em;
+
 	&__item{
 		float: left;
-		color: $color_menu;
+		color: $color-menu;
 		text-transform: uppercase;
 		&:hover .main-menu__submenu {
 		  display: block;
 		  max-height: 20em;
 		}
 	}
+
 	&__link{
-		color: $color_menu;
+		color: $color-menu;
 		padding:1em 1.2em;
 		display: block;
 		height: 4em;
@@ -18,8 +20,8 @@
 		@include transition(color 0.5s, background 0.5s);
 
 		&:hover, &--active{
-			color: $color_font_second;
-			background:$bg_darker_blue;
+			color: $color-font-second;
+			background:$bg-darker-blue;
 		}
 	}
 
@@ -27,20 +29,19 @@
 		position: absolute;
 		overflow: hidden;
 		max-height: 0;
-		background: $light_gray;
+		background: $light-gray;
 		z-index: 2;
 		@include transition(all 0.5s ease-out);
 
 		&-link{
-			color: $color_menu;
+			color: $color-menu;
 			padding:0.75em 2em;
 			display: block;
-			
 			@include transition(color 0.5s, background 0.5s);
 
 			&:hover, &--active{
-				color: $color_font_second;
-				background:$bg_darker_blue;
+				color: $color-font-second;
+				background:$bg-darker-blue;
 			}
 		}
 	}
@@ -48,23 +49,24 @@
 
 .right-menu{
 	&__item{
-		color: $color_font_third;
+		color: $color-font-third;
 		text-transform: uppercase;
 		padding: 0.5em;
 		display: block;
 		font-size: 1.3rem;
-		border-bottom:1px solid $light_gray;
+		border-bottom:1px solid $light-gray;
 		@include border-radius(0.25em);
 		@include transition(color 0.5s, background 0.5s);
+
 		&:hover,&--active{
-			color: $color_font_second;
-			background:$bg_darker_blue;
+			color: $color-font-second;
+			background:$bg-darker-blue;
 		}
 	}
 }
 
 .footer__menu{
-	background-color: $bg_aqua;
+	background-color: $bg-aqua;
 	font-size: 1.6rem;
 
 	&_list{
@@ -73,13 +75,15 @@
 			margin: auto;
 		}
 	}
+
 	&_item{
 		float: left;
-		color: $color_font_second;
+		color: $color-font-second;
 		padding: 0 0.5em;
 	}
+
 	&_link{
-		color: $color_font_second;
+		color: $color-font-second;
 	}
 }
 
@@ -90,28 +94,33 @@
 	position: absolute;
 	overflow: hidden;
 	max-height: 0;
-	@include transition(all 1s ease-in-out);
 	z-index: 5;
+	@include transition(all 1s ease-in-out);
+
 	&__list{
-		background: #FFF;
+		background: $bg-white;
 		position: relative;
 	}
+
 	&__link,&__sublink{
-		color: $color_menu;
+		color: $color-menu;
 		padding:0.5em;
 		display: block;
-		border-bottom:1px solid $light_gray;
+		border-bottom:1px solid $light-gray;
 		@include transition(color 0.5s, background 0.5s);
+
 		&:hover,&--active{
-			color: $color_font_second;
-			background: $bg_darker_blue;
+			color: $color-font-second;
+			background: $bg-darker-blue;
 		}
 	}
+
 	&__submenu{
 		width: 100%;
 		display: table;
-		background: $light_gray;
+		background: $light-gray;
 	}
+
 	&__subitem{
 		float: left;
 	}

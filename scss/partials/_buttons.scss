@@ -1,35 +1,44 @@
+//Default button style
 .button{
 	padding: 0.75em 1em;
 	border: 0;
 	cursor: pointer;
 	@include transition(background 0.5s);
+
+	//Light blue button
 	&--light-blue{
-		background: $bg_light_blue;
-		color: $color_font_second;
+		background: $bg-light-blue;
+		color: $color-font-second;
+		//Hover state
 		&:hover{
-			background: $bg_dark_blue;
+			background: $bg-dark-blue;
 		}
 	}
 }
 
-.toggle__button:focus ~ .toggle-menu {
-  display: block;
-  max-height: 100em;
-}
-.toggle__button{
-	border: 1px solid #CCC;
-	padding: 0.5em;
-	cursor: pointer;
-	margin-top:30%;
-	@include border-radius(0.2em);
-	z-index: 60;
-	position: relative;
-}
-.toggle__bar {
-    display: block;
-    width: 22px;
-    height: 2px;
-    border-radius: 1px;
-    background-color: #000;
-    margin: 2px 0;
+.toggle{
+	//Menu button on small screen
+	&__button{
+		border: 1px solid $gray;
+		padding: 0.5em;
+		cursor: pointer;
+		margin-top:30%;
+		z-index: 60;
+		position: relative;
+		@include border-radius(0.2em);
+		//Keep menu open on focus
+		&:focus ~ .toggle-menu {
+			display: block;
+			max-height: 100em;
+		}
+	}
+	//Bars inside button / icon
+	&__bar {
+	    display: block;
+	    width: 22px;
+	    height: 2px;
+	    border-radius: 1px;
+	    background-color: $bg-black;
+	    margin: 2px 0;
+	}
 }
