@@ -1,0 +1,57 @@
+//Main body styles
+.body{
+	font-family: 'Open Sans', sans-serif;
+	line-height: 2.4em;
+	color: $color-font;
+}
+
+.header{
+	border-bottom:0.6em solid $cadet-blue;
+	z-index: 10;
+}
+
+.content{
+	padding: 1.5em;
+	&__title{
+		color: $color-title;
+		margin: 0.67em 0;
+	}
+	&__subtitle{
+	color: $color-subtitle
+	}
+	&__link{
+		color:$color-link;
+	}
+	&--padding{
+		padding:0.25em;
+	}
+}
+
+.module{
+	margin: 1em 0;
+	&__title{
+		color: $color-module-title;
+		font-weight: bold;
+	}
+}
+
+.map{
+	border: 0;
+	width: 100%;
+}
+
+.footer{
+	&__arrow{
+		position: relative;
+		overflow: hidden;
+		min-height: 3em;
+		&-tip{
+			border-color: transparent transparent $bg-aqua;
+			width: 100%;
+			border-style: solid;
+			border-width: 0 951px 30px;
+			position: absolute;
+			@extend .center-block;
+		}
+	}
+}
