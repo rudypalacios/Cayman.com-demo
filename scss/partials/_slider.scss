@@ -51,6 +51,16 @@
     }
 }
 
+/////////////////////////////////////////////////
+//Slider images configuration
+@for $i from 1 through $slides{
+    .sp-#{$i} img {
+        $delay: $slideshow-duration - ($i*$time-per-slide);
+        @include animation(slider-slide $slideshow-duration $delay infinite);
+    }
+}
+/////////////////////////////////////////////////
+
 //Slider images configuration
 @for $i from 1 through $slides{
     //Slide fade-in and fade-out
