@@ -1,5 +1,5 @@
 //Compatibility
-	$use-vendor-prefixes: true;
+	$use-vendor-prefixes: false;
 //COLOR PALETTE
 //Font main color / light black
 	$color-font: #444;
@@ -36,7 +36,7 @@
 	//Configuration
 	$slides: 3;
 	$words-per-slide:7;
-	$time-per-slide: 3s;
+	$time-per-slide: 8s;
 	//Math
 		$end-of-visibility:round(100/$slides); //Percent
 		$slideshow-duration: $slides*$time-per-slide; //Time in seconds

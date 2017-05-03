@@ -6,7 +6,7 @@
     }
 
     //Slider Fade-in/Fade-out
-    @include keyframes('slider-slide'){
+    @include keyframes('slider'){
         //Animation starts
         0% {
             opacity: 1;

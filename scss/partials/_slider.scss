@@ -7,11 +7,6 @@
         position:relative;
     }
 
-    &__img {
-        position:absolute;
-        @extend .center-block;
-    }
-
     &__title {
         font-size: 3.5em;
         padding: 0.25em;
@@ -22,9 +17,11 @@
 
     &__content{
         position: absolute;
+        top: 0;
         width: 117em;
         padding-top: 3em;
-        @extend .center-block;
+        left:50%;
+        margin-left: -58.5em;
     }
     
     &__text {
@@ -51,20 +48,16 @@
     }
 }
 
-/////////////////////////////////////////////////
-//Slider images configuration
-@for $i from 1 through $slides{
-    .sp-#{$i} img {
-        $delay: $slideshow-duration - ($i*$time-per-slide);
-        @include animation(slider-slide $slideshow-duration $delay infinite);
-    }
+%abs{
+    position: absolute;
+    width: 100%;
 }
-/////////////////////////////////////////////////
 
 //Slider images configuration
 @for $i from 1 through $slides{
     //Slide fade-in and fade-out
-    .slider__slide-#{$i} {
+    .slider__slide-#{$i}  {
+        @extend %abs;
         //When to start the slide animation
         $delay: $time-per-slide * ($i - 1);
         @include animation(slider $slideshow-duration $delay infinite);
